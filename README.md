@@ -15,4 +15,3 @@ A simple and modern **To-Do List** web app built with **React** and **TypeScript
 - **React**: Front-end JavaScript framework for building the user interface.
 - **TypeScript**: Superset of JavaScript that adds static typing to the project.
 - **CSS**: Custom styling for a modern and clean user interface.
-- **GitHub Pages**: Deployed to GitHub Pages for easy sharing and hosting.
