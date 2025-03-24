@@ -1,0 +1,248 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 100%;
+  padding: 20px;
+}
+
+/* Container for the ToDo app */
+.to-do-list {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.to-do-list:hover {
+  transform: translateY(-5px);
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  color: #4caf50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Input and Button container */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Input field */
+input {
+  width: 75%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #4caf50;
+}
+
+/* Add button */
+.add-button {
+  width: 20%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+/* Task List */
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual task item */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  word-wrap: break-word;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Task Text */
+.task-text {
+  flex-grow: 1;
+  padding-left: 12px;
+  font-size: 18px;
+  transition: text-decoration 0.3s ease;
+}
+
+/* Checkbox */
+.task-checkbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #4caf50;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.task-checkbox:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.task-checkbox:checked::before {
+  content: "✔";
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Buttons: Delete and Move */
+.task-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.move-button,
+.delete-button {
+  padding: 8px 15px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-left: 10px; /* Spacing between task text and delete button */
+}
+
+.move-button:hover,
+.delete-button:hover {
+  background-color: #ddd;
+}
+
+.move-button.up {
+  background-color: #2196f3;
+  color: white;
+}
+
+.move-button.down {
+  background-color: #ff9800;
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .to-do-list {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Input and button layout adjustments */
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .add-button {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* Task checkbox size */
+  .task-checkbox {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Task text size */
+  .task-text {
+    font-size: 16px;
+  }
+
+  /* Task layout for mobile (Stack vertically) */
+  .task-item {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 12px;
+    width: 100%; /* Ensure the task items take up the full width */
+  }
+
+  /* Task buttons adjustment for mobile */
+  .task-buttons {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .move-button,
+  .delete-button {
+    font-size: 12px;
+    margin-left: 0; /* Remove left margin on mobile */
+    margin-top: 10px; /* Add space between the task text and buttons */
+  }
+
+  /* Adjust margin for delete button in mobile */
+  .delete-button {
+    margin-left: 0;
+    margin-top: 10px; /* Add space between task text and button */
+  }
+}
